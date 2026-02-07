@@ -1,0 +1,19 @@
+name = "proxyip-aurora"
+main = "index.js"
+compatibility_date = "2026-02-07"
+
+# Worker 配置
+route = "your-worker-url/*"   # 可以在 Cloudflare 上绑定域名（可选）
+account_id = "<Your_Account_ID>"
+
+[vars]
+EXTERNAL_API_URL = "https://external-api.example.com"  # 外部 API 地址
+PASSWORD = "cmliu"  # 登录密码（用于认证）
+
+[[kv_namespaces]]
+binding = "KV"
+id = "<Your_KV_Namespace_ID>"
+
+[assets]
+bucket = "./public"
+entry-point = "workers_site"
